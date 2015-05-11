@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <title>Tagify</title>
+    <link href="css/angular-bootstrap.css" rel="stylesheet">
+</head>
+
+<body ng-app="demo" ng-controller="demoController" class="ng-scope">
+<div class="container-fluid">
+    <h3>--</h3>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Text</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <form class="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="10" ng-model="textToAnalyse" ng-trim="true"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right" ng-disabled="textarea_empty" ng-model="analyse" ng-click="startAnalyse()">Analysieren</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Analyse</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <form class="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="10" ng-model="analysedText" ng-trim="true"></textarea>
+                        </div>
+                        <div class="panel panel-info" ng-show="showCategories">
+                            <div class="panel-heading">Kategorien</div>
+                            <div class="panel-body">
+                                <div class="btn-group">
+                                    <label class="btn btn-primary" ng-repeat="category in categories" ng-model="category.checked" btn-checkbox>
+                                        {{category.name}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-info" ng-show="showLocations">
+                            <div class="panel-heading">Orte</div>
+                            <div class="panel-body">
+                                <div class="btn-group">
+                                    <label class="btn btn-primary" ng-repeat="location in locations" ng-model="location.checked" btn-checkbox>
+                                        {{location.name}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-info" ng-show="showKeywords">
+                            <div class="panel-heading">Keywords</div>
+                            <div class="panel-body">
+                                <div class="btn-group">
+                                    <label class="btn btn-primary" ng-repeat="keyword in keywords" ng-model="keyword.checked" btn-checkbox>
+                                        {{keyword.name}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/angular-bootstrap.js" type="text/javascript"></script>
+<script src="js/string.min.js"></script>
+<script src="js/demo.js"></script>
+</body>
+</html>
