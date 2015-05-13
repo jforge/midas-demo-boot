@@ -1,6 +1,22 @@
+/*
+ * Copyright 2015 picturesafe media/data/bank GmbH
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 angular.module('demo', ['ui.bootstrap']).controller('demoController', function($scope, $http) {
     $scope.textarea_empty = true;
-    $scope.textToAnalyse = 'Die Emotionen, die am späten Abend des 12. Juni vergangenen Jahres in der Familie Y. hochkochten, dürften für viele nachvollziehbar sein. Da sitzt die eigene Tochter, die eigene Schwester weinend auf einem Polizeirevier in Müllheim im Markgräflerland, im äußersten Südwesten Deutschlands. Das Auge blutunterlaufen, der Rücken voller Hämatome, die Arme mit Kratzern übersät.';
+    $scope.textToAnalyse = articleText;
     $scope.analysedText = '';
 
     $scope.categories = [];
@@ -85,7 +101,7 @@ angular.module('demo', ['ui.bootstrap']).controller('demoController', function($
                 }
             }
 
-            for (var i = 0; i < $scope.locations.length; i++) {
+            for (var i = 0; i < $scope.keywords.length; i++) {
                 var tagCandidate = ' ' + $scope.keywords[i].name;
                 var tagReplacement = ' #' + $scope.keywords[i].name;
                 data.text = S(data.text).replaceAll(tagCandidate, tagReplacement);

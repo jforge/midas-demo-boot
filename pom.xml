@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.picturesafe.midas.demo</groupId>
-    <artifactId>demo-boot</artifactId>
+    <artifactId>midas-demo-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>demo-boot</name>
+    <name>midas-demo-boot</name>
     <description>Spring Boot demo project for picturesafe Midas REST-API</description>
 
     <parent>
