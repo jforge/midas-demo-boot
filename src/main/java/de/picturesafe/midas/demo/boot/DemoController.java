@@ -38,6 +38,9 @@ import javax.annotation.Resource;
 
 @RestController
 public class DemoController {
+
+    private static final String BASE_URL = "http://midas.picturesafe.de/rest-service/rest";
+
     @Resource
     private RestTemplate midasTemplate;
 
@@ -56,7 +59,7 @@ public class DemoController {
     private void populateCategories(Text text, TextAnalysis textAnalysis) {
         final AnalyzeRequest analyzeRequest = new AnalyzeRequest(text.getText());
         final CategoryResult categoryResult
-                = midasTemplate.postForObject("http://midas.picturesafe.de/rest-service/rest/textmining/category", analyzeRequest, CategoryResult.class);
+                = midasTemplate.postForObject(BASE_URL + "/textmining/category", analyzeRequest, CategoryResult.class);
 
         if (!CollectionUtils.isEmpty(categoryResult.getCategories())) {
             final Category category = categoryResult.getCategories().iterator().next();
@@ -67,7 +70,7 @@ public class DemoController {
     private void populateLocations(Text text, TextAnalysis textAnalysis) {
         final AnalyzeRequest analyzeRequest = new AnalyzeRequest(text.getText());
         final EntityResult entityResult
-                = midasTemplate.postForObject("http://midas.picturesafe.de/rest-service/rest/textmining/entity/locations", analyzeRequest, EntityResult.class);
+                = midasTemplate.postForObject(BASE_URL + "/textmining/entity/locations", analyzeRequest, EntityResult.class);
 
         if (!CollectionUtils.isEmpty(entityResult.getEntities())) {
             final List<String> locations = new ArrayList<>(entityResult.getEntities().size());
@@ -81,7 +84,7 @@ public class DemoController {
     private void populateKeywords(Text text, TextAnalysis textAnalysis) {
         final AnalyzeRequest analyzeRequest = new AnalyzeRequest(text.getText());
         final KeywordResult keywordResult
-                = midasTemplate.postForObject("http://midas.picturesafe.de/rest-service/rest/textmining/keyword", analyzeRequest, KeywordResult.class);
+                = midasTemplate.postForObject(BASE_URL + "/textmining/keyword", analyzeRequest, KeywordResult.class);
 
         if (!CollectionUtils.isEmpty(keywordResult.getKeywords())) {
             final List<String> keywords = new ArrayList<>(keywordResult.getKeywords().size());
