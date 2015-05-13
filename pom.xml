@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.test</groupId>
-    <artifactId>demo</artifactId>
+    <groupId>de.picturesafe.midas.demo</groupId>
+    <artifactId>demo-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>demo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>demo-boot</name>
+    <description>Spring Boot demo project for picturesafe Midas REST-API</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -21,7 +21,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>demo.DemoApplication</start-class>
+        <start-class>de.picturesafe.midas.demo.boot.DemoApplication</start-class>
         <java.version>1.7</java.version>
     </properties>
 
