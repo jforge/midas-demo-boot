@@ -19,7 +19,7 @@ midas.apikey=<your-api-key>
 ```
 
 If you don't know how to include this file in your classpath, simply save it to `src/main/resources` in the project directory.
-If you don't have an API key yet please see "Get an API key" in this document.
+If you don't have an API key yet please see _"Get an API key"_ in this document.
 
 ## Run demo application
 
