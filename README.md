@@ -35,4 +35,4 @@ mvn clean package
 
 ## Get Your API Key
 
-Please use the picturesafe Midas [registration form](http://midas.picturesafe.de/customer-demo/registration/register.xhtml) to request your personal API key.
+Please use the picturesafe Midas [registration form](http://midas.picturesafe.de/customer-demo/registration/registerApiKey.xhtml) to request your personal API key.
